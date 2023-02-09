@@ -7,8 +7,37 @@ describe 'MostCommonWordSequences' do
     end
   end
   describe "strip" do
-    it "strips the file to its barebones" do
+    it "strips the file" do
 
+    end
+  end
+  describe "sequence_has_empty_strings" do
+    context "has empty strings" do
+      it "returns true" do
+
+      end
+    end
+    context "does not have empty strings" do
+      it "returns false" do
+
+      end
+    end
+  end
+  describe "word_seq" do
+    context "array has only empty strings" do
+      it "returns empty" do
+
+      end
+    end
+    context "array has one empty string" do
+      it "returns string with all strings" do
+
+      end
+    end
+    context "array has strings" do
+      it "returns string with all strings" do
+
+      end
     end
   end
   describe "word_sequence_frequencies" do
@@ -17,7 +46,7 @@ describe 'MostCommonWordSequences' do
     end
   end
   describe "descend" do
-    it "descends the hash by key" do
+    it "descends the hash by value" do
 
     end
   end

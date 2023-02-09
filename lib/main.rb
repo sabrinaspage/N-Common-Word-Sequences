@@ -7,28 +7,36 @@ class MostCommonWordSequences
   end
 
   def call
-    data = word_sequence_frequencies(strip)
-    hash = descend(data)
+    freq = word_sequence_frequencies(strip)
+    hash = descend(freq)
     top_common_word_sequences(hash)
   end
 
   def strip
     file_data = @file.read.downcase.split()
     file_data.map!{|data| data.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '') }
-    file_data.map!{|data| data.gsub(/[?"]/, '') }
+  end
+
+  def sequence_has_empty_strings(data, index)
+    data[index..index + NUM_OF_WORDS_IN_SEQUENCE - 1].any?(&:empty?)
+  end
+
+  def word_seq(data, index)
+    data[index..index + NUM_OF_WORDS_IN_SEQUENCE - 1].join(' ')
   end
 
   def word_sequence_frequencies(file_data)
     frequency_dict = Hash.new
 
     for i in 0..file_data.length-NUM_OF_WORDS_IN_SEQUENCE do
-      next if file_data[i] == '' || file_data[i+1] == '' || file_data[i+2] == ''
+      next if sequence_has_empty_strings(file_data, i)
 
-      three_word_seq = "#{file_data[i]} #{file_data[i+1]} #{file_data[i+2]}"
-      if frequency_dict.has_key?(three_word_seq)
-        frequency_dict[three_word_seq] += 1
+      word_sequence = word_seq(file_data, i)
+
+      if frequency_dict.has_key?(word_sequence)
+        frequency_dict[word_sequence] += 1
       else
-        frequency_dict[three_word_seq] ||= 0
+        frequency_dict[word_sequence] ||= 0
       end
     end
 
