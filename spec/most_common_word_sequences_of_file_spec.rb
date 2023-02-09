@@ -1,6 +1,6 @@
-require 'main'
+require 'most_common_word_sequences_of_file'
 
-describe 'MostCommonWordSequences' do
+describe 'MostCommonWordSequencesOfFile' do
   describe "call" do
     it "returns hash which meets challenge criteria" do
 
@@ -34,8 +34,8 @@ describe 'MostCommonWordSequences' do
 
       end
     end
-    context "array has strings" do
-      it "returns string with all strings" do
+    context "array of has non-empty strings" do
+      it "returns string with all #{MostCommonWordSequences.NUM_OF_WORDS_IN_SEQUENCE} strings" do
 
       end
     end
