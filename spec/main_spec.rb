@@ -1,9 +1,9 @@
 require 'main'
 
-describe 'MostCommonWordSequencesOfFile' do
+describe 'Main' do
   describe "call" do
     context "all files by user exist" do
-      it "calls MostCommonWordSequencesOfFile for all files" do
+      it "calls Main for all files" do
 
       end
     end
