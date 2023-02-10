@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class MostCommonWordSequencesOfFile
   attr_writer :result
+
   NUM_OF_WORDS_IN_SEQUENCE = 3
   NUM_OF_SEQUENCES = 100
 
@@ -16,8 +19,8 @@ class MostCommonWordSequencesOfFile
   end
 
   def strip
-    file_data = @file.read.downcase.split()
-    @result = file_data.map!{|data| data.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '')}.reject(&:empty?)
+    file_data = @file.read.downcase.split
+    @result = file_data.map! { |data| data.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '') }.reject(&:empty?)
   end
 
   def word_seq(index)
@@ -27,7 +30,7 @@ class MostCommonWordSequencesOfFile
   def word_sequence_frequencies
     frequency_dict = Hash.new(0)
 
-    for i in 0..@result.length-NUM_OF_WORDS_IN_SEQUENCE do
+    (0..@result.length - NUM_OF_WORDS_IN_SEQUENCE).each do |i|
       word_sequence = word_seq(i)
       frequency_dict[word_sequence] += 1
     end
@@ -36,7 +39,7 @@ class MostCommonWordSequencesOfFile
   end
 
   def descend
-    @result = Hash[@result.sort_by{|k,v| -v}]
+    @result = Hash[@result.sort_by { |_k, v| -v }]
   end
 
   def top_common_word_sequences
