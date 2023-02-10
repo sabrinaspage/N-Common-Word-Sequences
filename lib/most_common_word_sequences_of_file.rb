@@ -13,11 +13,6 @@ class MostCommonWordSequencesOfFile
     word_sequence_frequencies
     descend
     top_common_word_sequences
-    print_top_word_sequences
-  end
-
-  def print_top_word_sequences
-    print @result.keys
   end
 
   def strip
