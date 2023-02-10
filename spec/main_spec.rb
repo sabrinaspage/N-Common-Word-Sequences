@@ -25,7 +25,7 @@ describe Main do
     end
 
     context 'the user does not list files' do
-      it 'return a help command' do
+      it 'returns an empty array' do
         expect(subject).to eq([])
       end
     end
@@ -37,7 +37,7 @@ describe Main do
     end
     context 'one of the files does not exist' do
       let!(:file_names) { ['snidjcfkds.txt'] }
-      it 'continues the program despite the invalid txt file' do
+      it 'returns an empty array' do
         expect(subject).to eq([])
       end
     end
