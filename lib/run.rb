@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-require 'main'
+require './lib/main'
 
-Main.new(ARGV).call
+print Main.new(ARGV).call

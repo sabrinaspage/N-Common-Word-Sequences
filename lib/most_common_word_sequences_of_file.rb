@@ -18,6 +18,8 @@ class MostCommonWordSequencesOfFile
     top_common_word_sequences
   end
 
+  private
+
   def strip
     file_data = @file.read.downcase.split
     @result = file_data.map! { |data| data.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/, '') }.reject(&:empty?)

@@ -44,7 +44,8 @@ describe Main do
       let!(:file_names) { ['spec/empty.txt', 'spec/full_of_.txt'] }
       it 'prints the MostCommonWordSequencesOfFile of all files' do
         expect(subject).to eq([{},
-                               { 'being silenced time' => 1,
+                               {
+                                 'being silenced time' => 1,
                                  'first time being' => 1,
                                  'is not the' => 1,
                                  'not the onion’s' => 1,
@@ -54,8 +55,7 @@ describe Main do
                                  'the onion’s first' => 1,
                                  'this is not' => 1,
                                  'time being silenced' => 2
-                                }
-                              ])
+                               }])
       end
     end
   end
