@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require './lib/most_common_word_sequences_of_file'
+require './tools/time'
 
 class Main
   attr_writer :result
@@ -11,6 +12,24 @@ class Main
   end
 
   def call
+    run_all_files
+  end
+
+  def output
+    run_all_files
+    time_decorator(method(:print))
+  end
+
+  private
+
+  def print
+    @result.each_with_index { |hash, index|
+      puts @file_names[index]
+      pp hash
+    }
+  end
+
+  def run_all_files
     @file_names.map do |file_name|
       next unless file_name.end_with?('.txt')
 
