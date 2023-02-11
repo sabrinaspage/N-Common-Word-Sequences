@@ -15,8 +15,8 @@ class MostCommonWordSequencesOfFile
 
   def call
     strip_file
-    word_sequence_frequencies
-    descend
+    frequency_of_word_sequences
+    descend_by_frequency
     top_common_word_sequences
   end
 
@@ -31,7 +31,7 @@ class MostCommonWordSequencesOfFile
     @file_data[index..index + NUM_OF_WORDS_IN_SEQUENCE - 1].join(' ')
   end
 
-  def word_sequence_frequencies
+  def frequency_of_word_sequences
     frequency_dict = Hash.new(0)
 
     (0..@file_data.length - NUM_OF_WORDS_IN_SEQUENCE).each do |i|
@@ -42,7 +42,7 @@ class MostCommonWordSequencesOfFile
     @result = frequency_dict
   end
 
-  def descend
+  def descend_by_frequency
     @result = Hash[@result.sort_by { |_k, v| -v }]
   end
 
