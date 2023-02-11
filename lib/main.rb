@@ -12,6 +12,18 @@ class Main
   end
 
   def call
+    run_all_files
+    print_result
+    @result
+  end
+
+  def output
+    time_decorator(method(:call))
+  end
+
+  private
+
+  def run_all_files
     @file_names.map do |file_name|
       next unless file_name.end_with?('.txt')
 
@@ -21,17 +33,7 @@ class Main
     rescue Errno::ENOENT
       raise "#{file_name} does not exist. proceeding..."
     end
-
-    print_result
-
-    @result
   end
-
-  def output
-    time_decorator(method(:call))
-  end
-
-  private
 
   def print_result
     @result.each_with_index { |hash, index|
