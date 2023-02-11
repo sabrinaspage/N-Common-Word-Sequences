@@ -45,7 +45,8 @@ Run `bundle exec rspec spec/*.rb` for a specific test. (i.e. `bundle exec rspec 
 
 ## What's Next?
 
-- A beefed up command line (help document section)
+- Add more command line tooling (--help, or --options)
+- Tabularize result
 - A web scraper for website inputs
 - Integrate CI/CD
 
