@@ -26,4 +26,4 @@ Run `bundle exec rspec spec/*.rb` for a specific test. (i.e. `bundle exec rspec 
 
 ## Bugs
 
-- Not entirely sure why my test output is in ascending order than descending order; but, my files work with the existing articles in `texts`.
+- None that are known

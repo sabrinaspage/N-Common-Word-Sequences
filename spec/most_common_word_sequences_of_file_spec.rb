@@ -7,16 +7,22 @@ describe MostCommonWordSequencesOfFile do
   let(:file) { File.open(file_name) }
   let(:output) do
     {
-      'being silenced time' => 1,
-      'first time being' => 1,
-      'is not the' => 1,
-      'not the onion’s' => 1,
-      'onion’s first time' => 1,
-      'sadly this is' => 1,
-      'silenced time being' => 1,
-      'the onion’s first' => 1,
-      'this is not' => 1,
-      'time being silenced' => 2
+      "time being silenced"=>3,
+      "sadly this is"=>2,
+      "this is not"=>2,
+      "is not sadly"=>1,
+      "not sadly this"=>1,
+      "is not the"=>1,
+      "not the onion’s"=>1,
+      "the onion’s first"=>1,
+      "onion’s first time"=>1,
+      "first time being"=>1,
+      "being silenced time"=>1,
+      "silenced time being"=>1,
+      "being silenced sadly"=>1,
+      "silenced sadly this"=>1,
+      "this is this"=>1,
+      "is this is"=>1
     }
   end
 
