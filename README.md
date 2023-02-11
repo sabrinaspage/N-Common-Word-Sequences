@@ -2,20 +2,21 @@
 
 Table of Contents
 - [Challenge by New Relic](#challenge-by-new-relic)
-  - [Prereqs](#prereqs)
-  - [Install](#install)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
   - [Docker](#docker)
   - [How to Run Program](#how-to-run-program)
   - [How to Run Tests](#how-to-run-tests)
   - [What's Next?](#whats-next)
   - [Bugs](#bugs)
 
-## Prereqs
+## Prerequisites
 
 `~> ruby 3.1.2`
+
 `~> bundler 2.2.3`
 
-## Install
+## Installation
 
 Run `git clone https://github.com/sabrinaspage/N-Common-Word-Sequences` in your terminal.
 
@@ -25,7 +26,7 @@ Run `bundle` to make sure you have all the needed gems.
 
 ## Docker
 
-We have dockerized this project so that all of our dependencies are written in code.
+We have dockerized this project so that all of our dependencies are written in code and can be maintained across different environments.
 
 Build the Docker image with: `docker build -t new-relic-practice`
 
