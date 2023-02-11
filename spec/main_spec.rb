@@ -43,8 +43,8 @@ describe Main do
     end
     context 'one of the files does not exist' do
       let!(:file_names) { ['snidjcfkds.txt'] }
-      it 'returns an empty array' do
-        expect(subject).to eq([])
+      it 'raises RuntimeError' do
+        expect { subject }.to raise_error(RuntimeError, "#{file_names.first} does not exist. proceeding...")
       end
     end
     context 'all the txt files are valid' do

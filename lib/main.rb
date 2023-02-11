@@ -18,7 +18,7 @@ class Main
       @result << MostCommonWordSequencesOfFile.new(file).call
       file.close
     rescue Errno::ENOENT
-      print "#{file_name} does not exist. proceeding..."
+      raise "#{file_name} does not exist. proceeding..."
     end
 
     @result
