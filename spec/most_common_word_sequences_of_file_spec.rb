@@ -50,7 +50,7 @@ describe MostCommonWordSequencesOfFile do
     context 'txt file has data' do
       let!(:file_name) { 'spec/texts/full_of_.txt' }
       it 'returns a hash of the common word sequences of file' do
-        expect(subject.length).to be <= MostCommonWordSequencesOfFile::NUM_OF_SEQUENCES
+        expect(subject.length).to be <= described_class::NUM_OF_SEQUENCES
         expect(subject).to eq(output)
       end
     end

@@ -12,24 +12,6 @@ class Main
   end
 
   def call
-    run_all_files
-  end
-
-  def output
-    run_all_files
-    time_decorator(method(:print))
-  end
-
-  private
-
-  def print
-    @result.each_with_index { |hash, index|
-      puts @file_names[index]
-      pp hash
-    }
-  end
-
-  def run_all_files
     @file_names.map do |file_name|
       next unless file_name.end_with?('.txt')
 
@@ -40,6 +22,21 @@ class Main
       raise "#{file_name} does not exist. proceeding..."
     end
 
+    print_result
+
     @result
+  end
+
+  def output
+    time_decorator(method(:call))
+  end
+
+  private
+
+  def print_result
+    @result.each_with_index { |hash, index|
+      puts @file_names[index]
+      pp hash
+    }
   end
 end
