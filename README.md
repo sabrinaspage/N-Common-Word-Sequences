@@ -17,9 +17,11 @@ Table of Contents
 
 ## Install
 
-run `git clone https://github.com/sabrinaspage/N-Common-Word-Sequences` in your terminal.
-enter the directory with `cd N-Common-Word-Sequences`.
-run `bundle` to make sure you have all the needed gems.
+Run `git clone https://github.com/sabrinaspage/N-Common-Word-Sequences` in your terminal.
+
+Enter the directory with `cd N-Common-Word-Sequences`.
+
+Run `bundle` to make sure you have all the needed gems.
 
 ## Docker
 

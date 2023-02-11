@@ -2,7 +2,7 @@
 require "pry"
 
 class MostCommonWordSequencesOfFile
-  attr_writer :result
+  attr_writer :result, :file_data
 
   NUM_OF_WORDS_IN_SEQUENCE = 3
   NUM_OF_SEQUENCES = 100
