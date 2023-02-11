@@ -36,19 +36,19 @@ describe Main do
       end
     end
     context 'one of the files is not a txt file' do
-      let!(:file_names) { ['spec/empty.jpeg', 'spec/full_of_.txt'] }
+      let!(:file_names) { ['spec/texts/empty.jpeg', 'spec/texts/full_of_.txt'] }
       it 'expect to skip over non-.txt file' do
         expect(subject).to eq([output])
       end
     end
     context 'one of the files does not exist' do
-      let!(:file_names) { ['snidjcfkds.txt'] }
+      let!(:file_names) { ['spec/texts/snidjcfkds.txt'] }
       it 'raises RuntimeError' do
         expect { subject }.to raise_error(RuntimeError, "#{file_names.first} does not exist. proceeding...")
       end
     end
     context 'all the txt files are valid' do
-      let!(:file_names) { ['spec/empty.txt', 'spec/full_of_.txt'] }
+      let!(:file_names) { ['spec/texts/empty.txt', 'spec/texts/full_of_.txt'] }
       it 'prints the MostCommonWordSequencesOfFile of all files' do
         expect(subject).to eq([{}, output])
       end

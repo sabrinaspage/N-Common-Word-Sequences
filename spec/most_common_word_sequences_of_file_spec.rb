@@ -3,7 +3,7 @@
 require 'most_common_word_sequences_of_file'
 
 describe MostCommonWordSequencesOfFile do
-  let!(:file_name) { 'spec/empty.txt' }
+  let!(:file_name) { 'spec/texts/empty.txt' }
   let(:file) { File.open(file_name) }
   let(:output) do
     {
@@ -36,19 +36,19 @@ describe MostCommonWordSequencesOfFile do
       end
     end
     context 'txt file has one word' do
-      let!(:file_name) { 'spec/one_word.txt' }
+      let!(:file_name) { 'spec/texts/one_word.txt' }
       it 'returns an empty hash' do
         expect(subject).to eq({})
       end
     end
     context 'txt file has three words' do
-      let!(:file_name) { 'spec/three_words.txt' }
+      let!(:file_name) { 'spec/texts/three_words.txt' }
       it 'returns a hash with a frequency of one' do
         expect(subject).to eq({"hi there world"=>1})
       end
     end
     context 'txt file has data' do
-      let!(:file_name) { 'spec/full_of_.txt' }
+      let!(:file_name) { 'spec/texts/full_of_.txt' }
       it 'returns a hash of the common word sequences of file' do
         expect(subject.length).to be <= MostCommonWordSequencesOfFile::NUM_OF_SEQUENCES
         expect(subject).to eq(output)
